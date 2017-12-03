@@ -171,3 +171,10 @@ jdkPackagerJVMArgs := Seq(
   "-Dlogback.configurationFile=." + sep + "conf" + sep + "logback.xml",
   "-Xss10M"
 )
+// from http://www.scala-sbt.org/sbt-native-packager/formats/jdkpackager.html
+(antPackagerTasks in JDKPackager) := (antPackagerTasks in JDKPackager).value orElse {
+  for {
+    f <- Some(file("/Users/admin/oracle-jdk/lib/ant-javafx.jar")) if f.exists()
+  } yield f
+}
+
