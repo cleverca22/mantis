@@ -1,5 +1,5 @@
 steps:
-  - command: "sh .buildkite/get_or_update_verify.sh"
+  - command: "./.buildkite/get_or_update_verify.sh"
 
   - "wait"
 
