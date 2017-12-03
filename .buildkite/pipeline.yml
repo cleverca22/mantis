@@ -1,7 +1,11 @@
 steps:
   - command: "./.buildkite/get_or_update_verify.sh"
+    agents:
+      - "system=x86_64-darwin"
 
   - "wait"
 
   - command: "nix-shell -p sbt --run \"sbt jdkPackager:packageBin\""
+    agents:
+      - "system=x86_64-darwin"
 
