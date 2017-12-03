@@ -1,5 +1,5 @@
 steps:
-  - command: "git clone https://github.com/input-output-hk/sbt-verify && cd sbt-verify && nix-shell -p sbt --run \"sbt publishLocal\""
+  - command: "sh .buildkite/get_or_update_verify.sh"
 
   - "wait"
 
