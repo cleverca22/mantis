@@ -1,0 +1,7 @@
+steps:
+  - command: "git clone https://github.com/input-output-hk/sbt-verify && cd sbt-verify && nix-shell -p sbt --run \"sbt publishLocal\""
+
+  - "wait"
+
+  - command: "nix-shell -p sbt --run \"sbt jdkPackager:packageBin\""
+
